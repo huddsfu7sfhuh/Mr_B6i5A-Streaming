@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-const adminprefix = "+";
+const adminprefix = "~";
 const devs = ['441623408707371020','507138559640076294'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');

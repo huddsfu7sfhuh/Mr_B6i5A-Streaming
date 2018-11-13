@@ -1,9 +1,14 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Foxmc Support `,"http://twitch.tv/X_Xz")
-});
+
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!devs.includes(message.author.id)) return;
+
+  if (message.content.startsWith('('+'st')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/X_Xz");
+      message.channel.sendMessage(`**✅   ${argresult}**`)
+  }
 
 
 client.login(process.env.BOT_TOKEN); 
